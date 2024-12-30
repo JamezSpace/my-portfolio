@@ -1,0 +1,12 @@
+section[aria-label="Heros Section"] h1 {
+    font-size: 64px;
+}
+
+section[aria-label="Heros Section"] h1 span {
+    line-height: 0;
+    font-size: 1.618em;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-stroke: 1.5px black;
+}
