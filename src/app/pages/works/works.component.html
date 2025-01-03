@@ -1,0 +1,26 @@
+<section class="my-flex w-full gap-[30px] {{ visible }}">
+    <work-category-btn button_text="portfolios" (category)="oncategorySelected($event)" />
+    <work-category-btn button_text="business websites" (category)="oncategorySelected($event)" />
+</section>
+<section class="block {{ !visible }}">
+    <header class="mb-[10px]">
+        <button type="button" class="font-light rounded-full my-btn p-2 text-base" (click)="backToMenu()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                <rect width="24" height="24" fill="none" />
+                <path fill="none" stroke="currentColor"
+                    d="M8 5c0 .742-.733 1.85-1.475 2.78c-.954 1.2-2.094 2.247-3.401 3.046C2.144 11.425.956 12 0 12m0 0c.956 0 2.145.575 3.124 1.174c1.307.8 2.447 1.847 3.401 3.045C7.267 17.15 8 18.26 8 19m-8-7h24" />
+            </svg>
+        </button>
+    </header>
+    <section aria-label="selected work category expanded" class="flex items-start text-[0.5em] capitalize gap-5">
+        <h3 class="leading-none">{{ selected_category }}</h3>
+        <article class="my-btn h-[75svh] w-full flex flex-wrap gap-5" [ariaLabel]="selected_category">
+            <a href="" class="project">
+                <img src="" alt="">
+            </a>
+            <a href="" class="project">
+                <img src="" alt="">
+            </a>
+        </article>
+    </section>
+</section>

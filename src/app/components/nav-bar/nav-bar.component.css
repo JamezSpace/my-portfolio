@@ -1,6 +1,14 @@
 ul.my-flex li {
+    cursor: pointer;
     margin-inline: 30px;
     font-weight: 350;
     font-size: 90%;
     color: black;
+    -webkit-transition: text-decoration 400ms;
+    transition: text-decoration 400ms;
+}
+
+ul.my-flex li:hover {
+    text-decoration: underline;
+    text-underline-offset: 5px;
 }

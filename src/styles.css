@@ -3,7 +3,15 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    scroll-behavior: smooth;
+}
+
 .my-flex {
     display: flex;
     align-items: center;
+}
+
+.my-btn {
+    border: 1px solid black;
 }

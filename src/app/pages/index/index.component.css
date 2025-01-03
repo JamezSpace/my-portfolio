@@ -10,3 +10,15 @@ section[aria-label="Heros Section"] h1 span {
     color: transparent;
     -webkit-text-stroke: 1.5px black;
 }
+
+[aria-label*="work outcome"] article:first-of-type{
+    margin-left: 10%;
+}
+
+[aria-label*="work outcome"] article:last-of-type{
+    margin-right: 10%;
+}
+
+.number ~ p{
+    font-size: calc(1em / 1.618);
+}

@@ -1,0 +1,27 @@
+.false {
+    animation: fade-to-display-none 300ms forwards;
+}
+
+.true {
+    animation: fade-to-display-none 300ms reverse;
+}
+
+@keyframes fade-to-display-none {
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+        scale: 0;
+        display: none;
+    }
+}
+
+.project {
+    display: block;
+    width: 30vw;
+    height: 10em;
+    border: 1.5px solid #555;
+    border-radius: 8px;
+}
