@@ -1,12 +1,12 @@
 import { AfterViewInit, Component, ViewChild, ElementRef } from '@angular/core';
-import { NavBarComponent } from '../../components/nav-bar/nav-bar.component';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ViewportScroller } from '@angular/common';
+import { MyFooterComponent } from '../../components/my-footer/my-footer.component';
 
 @Component({
     selector: 'index',
-    imports: [NavBarComponent],
+    imports: [ MyFooterComponent],
     templateUrl: './index.component.html',
     styleUrl: './index.component.css'
 })

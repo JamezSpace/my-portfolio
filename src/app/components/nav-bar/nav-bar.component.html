@@ -6,8 +6,23 @@
             <li><a href="/about">About</a></li>
             <li><a href="/contact">Contact Me</a></li>
         </ul>
-        <button type="button" class="text-5xl">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><rect width="24" height="24" fill="none"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 15h18M3 9h18"/></svg>
+        <button type="button" class="text-5xl" (click)="toggleNavBar()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <rect width="24" height="24" fill="none" />
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="1.5" d="M3 15h18M3 9h18" />
+            </svg>
         </button>
     </div>
 </section>
+
+<div class="pseudo-body" #pseudobody>
+    <div id="extra-nav-bar" class="flex flex-col gap-5" #extranavbar>
+        <button class="p-3 rounded-full w-fit ml-auto hover:bg-slate-100" (click)="toggleNavBar()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><rect width="24" height="24" fill="none"/><path fill="currentColor" d="m6.4 18.308l-.708-.708l5.6-5.6l-5.6-5.6l.708-.708l5.6 5.6l5.6-5.6l.708.708l-5.6 5.6l5.6 5.6l-.708.708l-5.6-5.6z"/></svg>
+        </button>
+        <a href="">Services and pricing</a>
+        <a href="/calculator">Count my cost</a>
+        <a href="/drop-a-feedback">Drop a Feedback</a>
+    </div>
+</div>
