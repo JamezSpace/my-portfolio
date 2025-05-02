@@ -1,0 +1,25 @@
+mat-form-field {
+    font-family: inherit;
+}
+
+mat-slider {
+    width: 100%;
+}
+
+.mat-accordion {
+    border-block: 1px solid #000;
+}
+.mat-accordion .mat-expansion-panel {
+    border-radius: 0;
+    background-color: transparent;
+    box-shadow: none;
+    
+    &:not(:last-of-type) {
+        border-bottom: 1px solid #000;
+    }
+}
+
+.submit-feedback-button {
+    border-radius: 0;
+    margin-top: 20px;
+}

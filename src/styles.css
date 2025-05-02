@@ -3,18 +3,32 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body {
+
+:root {
+    --black: #141219;
+    --black-secondary: #0f0e19;
+    --purple: #8a78cb;
+    --purple-secondary: #c3b6da;
+    --blue: #3450b3;
+}
+
+html {
     height: 100%;
 }
 
 html {
     scroll-behavior: smooth;
+
+    @apply non-desktop-screen:text-sm;
 }
 
 body {
-    margin: 0;
-    /* font-family: Roboto, "Helvetica Neue", sans-serif; */
+    width: 100%;
+    /* overflow-x: hidden; */
+    position: relative;
+    /* -webkit-mask-image: url(nnoise.svg); */
+    background: url('/nnnoise.svg');
+    /* mask-repeat: no-repeat; */
 }
 
 .my-flex {
@@ -37,4 +51,15 @@ h2 {
 
 h3 {
     font-size: 1.17rem;
+}
+
+ul {
+    padding-inline: 0;
+    margin-block: 0;
+}
+
+:-webkit-autofill {
+    position: absolute;
+    inset: 0;
+    background: none !important;
 }

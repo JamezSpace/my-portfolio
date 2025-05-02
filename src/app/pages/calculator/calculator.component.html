@@ -1,5 +1,7 @@
-<form class="w-10/12 mx-auto bg-slate-300" [formGroup]="project">
-    <h1 class="mt-5 mb-10">Hello, I'd bring your ideas to reality. Tell me about your project...</h1>
+<form class="w-10/12 non-tablet-screen:w-full mx-auto" [formGroup]="project">
+    <h1 class="mt-5">Hello</h1>
+    <p class="mb-10">Tell me about your project...</p>
+    <!-- <h2 class=" font-medium text-[1.55em] track leading-none">Hello, I'd bring your ideas to reality. Tell me about your project...</h2> -->
     <mat-form-field appearance="outline">
         <mat-label>Name</mat-label>
         <input type="text" required matInput formControlName="name" (blur)="updateErrorMessages()">
@@ -10,6 +12,7 @@
     <mat-form-field appearance="outline">
         <mat-label>Email</mat-label>
         <input type="email" required matInput formControlName="email" (blur)="updateErrorMessages()">
+        <mat-icon matIconSuffix>alternate_email</mat-icon>
         @if (email.invalid) {
         <mat-error>{{emailErrorMessage()}}</mat-error>
         }
@@ -49,9 +52,9 @@
         </mat-radio-button>
     </section>
 
-    <button class="border border-black rounded-[5px] py-[10px] px-5 mt-[10px]">
+    <button class="border border-black rounded-[5px] py-[10px] px-5 mt-[10px] mb-8 flex items-center gap-2">
         Submit
-        <svg xmlns="http://www.w3.org/2000/svg" class="rotate-180 inline ml-[10px]" width="24" height="24"
+        <svg xmlns="http://www.w3.org/2000/svg" class="rotate-180" width="24" height="24"
             viewBox="0 0 24 24">
             <rect width="24" height="24" fill="none" />
             <path fill="none" stroke="currentColor"

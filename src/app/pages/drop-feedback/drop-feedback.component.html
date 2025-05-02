@@ -1,0 +1,80 @@
+<div class="px-5 w-[70%] mx-auto">
+    <h1 class="mt-5">Hey There! Kindly drop a Feedback</h1>
+    <p>I value your feedback! Share your thoughts on our collaboration.</p>
+
+    <section aria-label="do you want to give your feedback anonymous or not?" class="mt-5 mb-2">
+        <label>Do you want to give your feedback anonymously?</label>
+        <mat-radio-group [formControl]="anonymousControl">
+            <mat-radio-button value="yes">Yes</mat-radio-button>
+            <mat-radio-button value="no">No</mat-radio-button>
+        </mat-radio-group>
+    </section>
+
+    <form class="flex flex-col" [formGroup]="feedbackForm">
+        <mat-form-field appearance="outline" [className]="formVisible() === 'yes' ? 'hidden' : ''">
+            <mat-label>Your Name</mat-label>
+            <input matInput type="text" formControlName="name" placeholder="e.g Henry, CEO Creatribe">
+        </mat-form-field>
+        <mat-accordion>
+            <!-- Overall Experience -->
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>Overall Experience</mat-expansion-panel-header>
+                <section class="block">
+                    <mat-label class="block">How satisfied are you with the project I delivered?</mat-label>
+                    <mat-slider min="0" max="20" step="2" showTickMarks discrete>
+                        <input matSliderThumb>
+                    </mat-slider>
+                </section>
+            </mat-expansion-panel>
+
+            <!-- Quality Section -->
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>Quality of Work</mat-expansion-panel-header>
+
+                <div class="mb-2">
+                    <mat-label>Were you impressed?</mat-label>
+                    <mat-radio-group formControlName="impressed">
+                        <mat-radio-button value="yes">Yes</mat-radio-button>
+                        <mat-radio-button value="bland">I wasn't wowed</mat-radio-button>
+                        <mat-radio-button value="no">No</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+
+                <div>
+                    <mat-label>Talking timelines, give me a score</mat-label>
+                    <mat-slider min="0" max="6" step="2" discrete>
+                        <input matSliderThumb>
+                    </mat-slider>
+                </div>
+            </mat-expansion-panel>
+
+            <!-- Communication Section -->
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>Communication</mat-expansion-panel-header>
+
+                <div>
+                    <mat-label>How effective and responsive was my communication during the project?</mat-label>
+                    <mat-slider min="0" max="5" step="1" showTickMarks discrete>
+                        <input matSliderThumb>
+                    </mat-slider>
+                </div>
+            </mat-expansion-panel>
+
+            <!-- Recommendation Section -->
+             <mat-expansion-panel>
+                <mat-expansion-panel-header>Would You Recommend Me?</mat-expansion-panel-header>
+
+                <div>
+                    <mat-label>Would you recommend my services to others?</mat-label>
+                    <mat-radio-group formControlName="recommendation">
+                        <mat-radio-button value="yes">Yes</mat-radio-button>
+                        <mat-radio-button value="no">No</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+             </mat-expansion-panel>
+        </mat-accordion>
+
+        <button type="button" class="submit-feedback-button" mat-flat-button>Submit Feedback</button>
+    </form>
+
+</div>

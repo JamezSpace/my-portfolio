@@ -1,5 +1,7 @@
 footer > h2 {
-    font-size: 24px;
+    font-size: 1.25rem;
+
+    @apply non-tablet-screen:text-base;
 }
 h2 > span {
     font-size: calc(1.75em * 1.618);
@@ -13,9 +15,9 @@ h2 > a {
 }
 .i-bar {
     width: 50%;
-    height: 6px;
+    height: 5px;
     border-radius: 50px;
-    background-color: azure;
+    background-color: var(--purple-secondary);
     margin-inline: auto;
     margin-block: 60px 0;
     cursor: none;

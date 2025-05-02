@@ -1,5 +1,6 @@
-<section aria-label="Heros Section" class="h-[90dvh] ps-5 pe-5 flex items-end mb-5">
-    <div class="caption-container flex items-end gap-5 justify-between">
+<section aria-label="Heros Section" class="h-[92dvh] ps-5 pe-5 flex items-end mb-5">
+    <div
+        class="caption-container flex items-end gap-5 justify-between non-tablet-screen:flex-col non-tablet-screen:items-start">
         <h1 class="uppercase font-semibold basis-full">
             full stack <br>
             <span class="font-bold">developer</span>
@@ -21,17 +22,18 @@
         </article>
     </div>
 </section>
-<section aria-label="tagline container" class="h-[100svh] flex justify-center sticky top-0 -z-[1]" #taglinecontainer>
+
+<section aria-label="tagline container" class="h-[100dvh] flex justify-center sticky top-0 -z-[1]" #taglinecontainer>
     <h1 class="text-center text-3xl mt-[40svh]">
         <span class="block font-black mb-2">Designing the Future:</span>
         <span class="font-light text-[1em]">Beautifully Intuitive and Technically Advanced Web Solutions</span>
     </h1>
 </section>
 
-<div #containerbelow class="mt-[40svh] pt-[10svh]" id="my-works-preview">
-    <section class="grid-container h-dvh pt-5 pb-5 ps-5 pe-5 text-3xl bg-gray-600 relative z-10">
+<div #containerbelow id="my-works-preview">
+    <section class="grid-container h-dvh pt-5 pb-5 ps-5 pe-5 bg-gradient-to-b from-purple to-blue relative z-10">
         <h2
-            class="font-black text-[2.2em] uppercase mb-5 absolute -top-[0.9ch] left-1/2 -translate-x-1/2 text-gray-600">
+            class="font-black min-w-[320px] text-center uppercase mb-5 absolute -top-[1.75ch] non-desktop-screen:-top-[0.75ch] non-tablet-screen:-top-[1.3ch] left-1/2 -translate-x-1/2 text-purple">
             My Works</h2>
         <article class="my-flex justify-center border border-solid border-white w-full h-full text-[0.8em] text-white">
             <p class="text-center capitalize">works overview...<br> mocukups, screenshots of my sites in a slideshow
@@ -40,45 +42,81 @@
     </section>
 </div>
 
-<div class="my-flex gap-5 justify-evenly text-3xl pt-5 pb-5 ms-5 me-5 bg-white"
-    aria-label='this is the section holding my work outcome e.g. leads, clients satisfaction rate, passion'
-    #workoutcome>
-    <article>
-        <h2 class="number">10</h2>
-        <p>leads</p>
-    </article>
-    <article>
-        <h2 class="number">95%</h2>
-        <p>satisfaction rate</p>
-    </article>
-    <article>
-        <h2 class="number"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 72 72">
-                <rect width="72" height="72" fill="none" />
-                <path fill="#9b9b9a" stroke="#9b9b9a" stroke-width="1"
-                    d="M36 39.44c-4.335 4.335-8.841 9.096-15.73 9.096c-7.141 0-12.24-5.271-12.24-12.58c.056-7.058 5.863-12.67 12.92-12.54c6.29 0 10.97 4.973 15.05 9.054c4.335-4.336 8.841-9.054 15.73-9.054c7.226 0 12.24 5.229 12.24 12.54c-.056 7.058-5.863 12.75-12.92 12.62c-6.29 0-10.97-5.057-15.05-9.137zm-3.4-3.444c-3.315-3.06-6.801-7.522-11.73-7.522a7.49 7.49 0 0 0-7.48 7.48c-.205 4.113 3.108 7.584 7.226 7.522c4.844 0 8.754-4.166 11.98-7.48zm26.01-.042a7.126 7.126 0 0 0-7.226-7.48c-4.846 0-8.756 4.165-11.99 7.48c3.315 3.06 6.8 7.522 11.73 7.522c4.129-.005 7.476-3.393 7.482-7.522z" />
-                <g stroke="#000" stroke-linecap="round" stroke-width="1">
-                    <path fill="none"
-                        d="M36 32.51c4.335-4.336 8.841-9.096 15.73-9.096c7.226 0 12.24 5.271 12.24 12.58c-.056 7.058-5.863 12.71-12.92 12.58c-5.006 0-8.99-3.178-12.47-6.532m-2.581-2.564c-4.335 4.335-8.841 9.096-15.73 9.096c-7.141 0-12.24-5.271-12.24-12.58c.056-7.058 5.863-12.71 12.92-12.58c5.02 0 9.012 3.194 12.49 6.558m-3.476 3.475c-2.586-2.503-5.447-4.932-9.102-4.932a7.49 7.49 0 0 0-7.48 7.48a7.126 7.126 0 0 0 7.226 7.48c4.844 0 8.754-4.166 11.98-7.48m9.401 2.521c2.594 2.513 5.462 4.959 9.129 4.959a7.49 7.49 0 0 0 7.482-7.48h0a7.126 7.126 0 0 0-7.226-7.48c-4.846 0-8.756 4.165-11.99 7.48" />
-                    <path stroke-linejoin="round" d="m32.6 36l3.4-3.49m0 6.98L39.4 36" />
-                </g>
-            </svg></h2>
-        <p>passion</p>
-    </article>
+<div class="px-5 py-10 bg-white">
+    <section class="my-flex gap-5 justify-evenly text-3xl pt-5 pb-5" id="outcome"
+        aria-label='this is the section holding my work outcome e.g. leads, clients satisfaction rate, passion'
+        #workoutcome>
+        <article>
+            <h2 class="number">10</h2>
+            <p>leads</p>
+        </article>
+        <article>
+            <h2 class="number">95%</h2>
+            <p>satisfaction rate</p>
+        </article>
+        <article>
+            <h2 class="number"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 72 72">
+                    <rect width="72" height="72" fill="none" />
+                    <path fill="#c3b6da" stroke="#c3b6da" stroke-width="1"
+                        d="M36 39.44c-4.335 4.335-8.841 9.096-15.73 9.096c-7.141 0-12.24-5.271-12.24-12.58c.056-7.058 5.863-12.67 12.92-12.54c6.29 0 10.97 4.973 15.05 9.054c4.335-4.336 8.841-9.054 15.73-9.054c7.226 0 12.24 5.229 12.24 12.54c-.056 7.058-5.863 12.75-12.92 12.62c-6.29 0-10.97-5.057-15.05-9.137zm-3.4-3.444c-3.315-3.06-6.801-7.522-11.73-7.522a7.49 7.49 0 0 0-7.48 7.48c-.205 4.113 3.108 7.584 7.226 7.522c4.844 0 8.754-4.166 11.98-7.48zm26.01-.042a7.126 7.126 0 0 0-7.226-7.48c-4.846 0-8.756 4.165-11.99 7.48c3.315 3.06 6.8 7.522 11.73 7.522c4.129-.005 7.476-3.393 7.482-7.522z" />
+                    <g stroke="#8a78cb" stroke-linecap="round" stroke-width="1">
+                        <path fill="none"
+                            d="M36 32.51c4.335-4.336 8.841-9.096 15.73-9.096c7.226 0 12.24 5.271 12.24 12.58c-.056 7.058-5.863 12.71-12.92 12.58c-5.006 0-8.99-3.178-12.47-6.532m-2.581-2.564c-4.335 4.335-8.841 9.096-15.73 9.096c-7.141 0-12.24-5.271-12.24-12.58c.056-7.058 5.863-12.71 12.92-12.58c5.02 0 9.012 3.194 12.49 6.558m-3.476 3.475c-2.586-2.503-5.447-4.932-9.102-4.932a7.49 7.49 0 0 0-7.48 7.48a7.126 7.126 0 0 0 7.226 7.48c4.844 0 8.754-4.166 11.98-7.48m9.401 2.521c2.594 2.513 5.462 4.959 9.129 4.959a7.49 7.49 0 0 0 7.482-7.48h0a7.126 7.126 0 0 0-7.226-7.48c-4.846 0-8.756 4.165-11.99 7.48" />
+                        <path stroke-linejoin="round" d="m32.6 36l3.4-3.49m0 6.98L39.4 36" />
+                    </g>
+                </svg></h2>
+            <p>passion</p>
+        </article>
+    </section>
 </div>
 
-<div class="bg-white">
-    <h2 class="text-center text-3xl font-bold">Every result is a speaking... <br> <span class="font-light">Let's hear some</span></h2>
-
+<div class="bg-white border-none">
+    <hr class="line-separator">
 </div>
 
-<section class="flex items-end justify-between px-[5%] py-14 bg-white">
-    <article>
-        <h2 class="text-xl mb-4">Want to know the cost of working with me?</h2>
+<div class="bg-white py-5 marquee-container" aria-label="my unique value propositions (uvp) or better put, why me?">
+    <ul class="flex font-medium marquee-content-container">
+        <li>Highly performant web solutions</li>
+        <li>Design intuition</li>
+    </ul>
+    <ul class="flex font-medium marquee-content-container">
+        <li>Highly performant web solutions</li>
+        <li>Design intuition</li>
+    </ul>
+    <ul class="flex font-medium marquee-content-container">
+        <li>Highly performant web solutions</li>
+        <li>Design intuition</li>
+    </ul>
+</div>
+
+<div class="bg-white pt-10 pb-20">
+    <h2 class="text-center text-3xl font-bold mb-5">Every result is a speaking... <br> <span class="font-light">Let's hear
+            some</span></h2>
+    <swiper-container effect="cards" grab-cursor="true"
+        class="mySwiper max-w-[60%] flex items-center justify-center border p-5">
+        @for (testimonial of testimonials; track $index) {
+            <swiper-slide>
+                <blockquote class="testimonial-text">{{ testimonial.text }}</blockquote>
+                <cite>
+                    <span>~</span>
+                    <span class="testator">{{testimonial.citer}}</span>
+                </cite>
+            </swiper-slide>
+        }
+    </swiper-container>
+</div>
+
+<section class="bg-white flex items-start justify-between pl-[5%] pt-14 max-h-[60svh] h-full">
+    <article class="w-1/3">
+        <p class="text-xl mb-4">Want to know the cost of working with me?</p>
         <a href="/calculator"
             class="block w-fit px-5 py-[10px] bg-black text-white border border-black rounded-full">Yes, I'd love that
             💪🏽</a>
     </article>
-    <img src="" alt="image of a screenshot of the calculator page">
+    <div class="h-full w-2/3 pt-[5svh] overflow-hidden calculator-image">
+        <img src="calculator.jpeg" class="w-full h-full object-cover border rounded-tl-[120px]"
+            alt="image of a screenshot of the calculator page">
+    </div>
 </section>
 
 <my-footer />

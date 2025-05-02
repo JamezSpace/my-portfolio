@@ -6,7 +6,7 @@
 
 // :root {
 //     @include mat.form-field-overrides((
-//         // outlined-outline-width: 1px,
+//         outlined-outline-width: 0 10px,
 //         filled-focus-active-indicator-color: red,
 //         ));
 // }
@@ -19,4 +19,8 @@ html {
             typography: Roboto,
             density: 0,
         ));
+}
+
+.mat-mdc-notch-piece.mdc-notched-outline__notch {
+    border-inline: none;
 }

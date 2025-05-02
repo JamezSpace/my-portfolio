@@ -27,12 +27,13 @@ ul.my-flex li:hover {
 }
 
 #extra-nav-bar {
-    padding: 20px;
+    padding: 20px 30px;
     background-color: #f7f7f7;
     position: fixed;
     right: 0;
     height: 100dvh;
-    width: 30%;
+    width: 100%;
+    max-width: 400px;
     z-index: 2;
     transform: translateX(100%);
     transition: transform 250ms;
@@ -47,7 +48,7 @@ ul.my-flex li:hover {
     font-size: 1.5em;
     font-weight: 400;
     position: relative;
-    padding-left: 30px;
+    padding-left: 40px;
     opacity: 0.75;
     transition-property: opacity, padding-left;
     transition-duration: 250ms;

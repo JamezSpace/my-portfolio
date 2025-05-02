@@ -1,5 +1,26 @@
+@import url('./swiper-elements.css');
+
+section[aria-label*='tagline'] {
+    background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.3)), url(/metallic-bg.jpg);
+    background: -moz-linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.3)), url(/metallic-bg.jpg);
+    background: -webkit-linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.3)), url(/metallic-bg.jpg);
+    background-size: cover ;
+    /* background-size: 120%; -- for laptop screen -- */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #f8f8f8;
+    /* background-blend-mode: difference; */
+}
+
 section[aria-label="Heros Section"] h1 {
-    font-size: 64px;
+    /* TODO: minimum font-size for any screen is 3rem and works perfectly, hence use clamp resource to vary size between 3rem and 4 rem and replace font-size with it */
+    font-size: 4rem;
+
+    @apply tablet-small-screen:text-5xl;
+    @apply non-tablet-screen:text-4xl;
+
+    line-height: normal;
 }
 
 section[aria-label="Heros Section"] h1 span {
@@ -11,14 +32,107 @@ section[aria-label="Heros Section"] h1 span {
     -webkit-text-stroke: 1.5px black;
 }
 
-[aria-label*="work outcome"] article:first-of-type{
+.grid-container h2 {
+    font-size: 4rem;
+    background: hsla(257, 16%, 8%, 1);
+    background: -webkit-linear-gradient(180deg, hsla(257, 16%, 8%, 1) 24%, hsla(253, 44%, 63%, 1) 100%);
+    background: -moz-linear-gradient(180deg, hsla(257, 16%, 8%, 1) 24%, hsla(253, 44%, 63%, 1) 100%);
+    background: linear-gradient(180deg, hsla(257, 16%, 8%, 1) 24%, hsla(253, 44%, 63%, 1) 100%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    /* color: transparent; */
+
+    @apply non-tablet-screen:text-5xl;
+}
+
+[aria-label*="work outcome"] article:first-of-type {
     margin-left: 10%;
 }
 
-[aria-label*="work outcome"] article:last-of-type{
+[aria-label*="work outcome"] article:last-of-type {
     margin-right: 10%;
 }
 
-.number ~ p{
-    font-size: calc(1em / 1.618);
+#outcome article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2.5rem;
+
+    h2.number {
+        font-size: 1em;
+        /* color: #9b9b9a; */
+        /* -webkit-text-stroke: 1px #000; */
+        color: var(--purple-secondary);
+        -webkit-text-stroke: 1px var(--purple);
+    }
+
+    p {
+        font-size: calc(1em / 1.618);
+        font-weight: 300;
+    }
+}
+
+.line-separator {
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+    width: 80%;
+    height: 2px;
+    border: none;
+    margin-inline: auto;
+    background-color: var(--black);
+}
+
+.marquee-container {
+    /* width: 100%; */
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    user-select: none;
+    overflow: hidden;
+    white-space: nowrap;
+
+    .marquee-content-container {
+        /* min-width: 100%; */
+        gap: 30px;
+        justify-content: space-evenly;
+        animation: marquee 10s linear infinite forwards;
+    }
+
+    .marquee-content-container:first-of-type {
+        /* background-color: yellow; */
+    }
+
+    .marquee-content-container:nth-of-type(2) {
+        /* background-color: red; */
+    }
+
+    .marquee-content-container:last-of-type {
+        /* background-color: yellowgreen; */
+    }
+
+
+
+    li {
+        -webkit-text-stroke: 1px #000;
+        color: transparent;
+        font-size: 1.75rem;
+        letter-spacing: -0.75px;
+    }
+}
+
+@keyframes marquee {
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.calculator-image img {
+    object-position: right top;
+    transition: object-position 600ms;
+    transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.calculator-image:hover img {
+    object-position: left 100%;
 }
