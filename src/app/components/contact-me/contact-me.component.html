@@ -1,0 +1,24 @@
+<div class="pseudo-container {{view}}" (click)="closeComponent()">
+    <div class="contact-me-container bg-white text-center px-5" (click)="$event.stopPropagation()">
+        <h1 class="pt-5 pb-4 text-3xl">Say Hi!</h1>
+        <a href="https://mailto:adobeclip2003@gmail.com">adobeclip2003&#64;gmail.com</a>
+        <fieldset>
+            <legend class="my-4">or</legend>
+            <form [formGroup]="contactMeMessage">
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input type="text" required matInput formControlName="client_email" (blur)="updateErrorMessages()">
+                    @if (client_email.invalid) {
+                    <mat-error>{{nameErrorMessage()}}</mat-error>
+                    }
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Message</mat-label>
+                    <textarea required matInput class="max-h-[30svh] min-h-[8svh]"></textarea>
+                </mat-form-field>
+
+                <button type="button" class="block">Send</button>
+            </form>
+        </fieldset>
+    </div>
+</div>

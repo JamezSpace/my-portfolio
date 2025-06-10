@@ -24,11 +24,8 @@ html {
 
 body {
     width: 100%;
-    /* overflow-x: hidden; */
     position: relative;
-    /* -webkit-mask-image: url(nnoise.svg); */
     background: url('/nnnoise.svg');
-    /* mask-repeat: no-repeat; */
 }
 
 .my-flex {

@@ -31,7 +31,7 @@
 </section>
 
 <div #containerbelow id="my-works-preview">
-    <section class="grid-container h-dvh pt-5 pb-5 ps-5 pe-5 bg-gradient-to-b from-purple to-blue relative z-10">
+    <section class="grid-container h-dvh pt-5 pb-5 ps-5 pe-5 bg-gradient-to-b from-purple to-blue relative z-[6]">
         <h2
             class="font-black min-w-[320px] text-center uppercase mb-5 absolute -top-[1.75ch] non-desktop-screen:-top-[0.75ch] non-tablet-screen:-top-[1.3ch] left-1/2 -translate-x-1/2 text-purple">
             My Works</h2>
@@ -43,10 +43,10 @@
 </div>
 
 <div class="px-5 py-10 bg-white">
-    <section class="my-flex gap-5 justify-evenly text-3xl pt-5 pb-5" id="outcome"
+    <section class="my-flex gap-5 justify-evenly text-2xl py-5" id="outcome"
         aria-label='this is the section holding my work outcome e.g. leads, clients satisfaction rate, passion'
         #workoutcome>
-        <article>
+        <article class="ml-[10%]">
             <h2 class="number">10</h2>
             <p>leads</p>
         </article>
@@ -54,7 +54,7 @@
             <h2 class="number">95%</h2>
             <p>satisfaction rate</p>
         </article>
-        <article>
+        <article class="mr-[10%]">
             <h2 class="number"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 72 72">
                     <rect width="72" height="72" fill="none" />
                     <path fill="#c3b6da" stroke="#c3b6da" stroke-width="1"
@@ -74,6 +74,36 @@
     <hr class="line-separator">
 </div>
 
+<div class="bg-white pt-10 pb-20">
+    <h2 class="text-center text-3xl font-bold mb-5">Every result is a speaking... <br> <span class="font-light">Let's hear
+            some</span></h2>
+    <swiper-container effect="cards" grab-cursor="true"
+        class="mySwiper max-w-[80%] non-tablet-screen:max-w-[90%] flex items-center justify-center border p-5">
+        @for (testimonial of testimonials; track $index) {
+            <swiper-slide>
+                <blockquote class="testimonial-text">{{ testimonial.text }}</blockquote>
+                <cite>
+                    <span>~</span>
+                    <span class="testator">{{testimonial.citer}}</span>
+                </cite>
+            </swiper-slide>
+        }
+    </swiper-container>
+</div>
+
+<section class="bg-white flex items-start justify-between pl-[5%] pt-14 max-h-[60svh] overflow-hidden h-full" aria-label="container showing a preview of a calculator made for prospective clients interested in knowing the cost of working with me">
+    <article class="w-1/3">
+        <p class="text-xl mb-4">Want to know the cost of working with me?</p>
+        <a href="/calculator"
+            class="block w-fit px-5 py-[10px] bg-black text-white border border-black rounded-full">Yes, I'd love that
+            💪🏽</a>
+    </article>
+    <div class="h-full w-2/3 pt-[5svh] overflow-hidden calculator-image">
+        <img src="calculator.jpeg" class="w-full h-full object-cover border rounded-tl-[120px]"
+            alt="image of a screenshot of the calculator page">
+    </div>
+</section>
+
 <div class="bg-white py-5 marquee-container" aria-label="my unique value propositions (uvp) or better put, why me?">
     <ul class="flex font-medium marquee-content-container">
         <li>Highly performant web solutions</li>
@@ -89,34 +119,10 @@
     </ul>
 </div>
 
-<div class="bg-white pt-10 pb-20">
-    <h2 class="text-center text-3xl font-bold mb-5">Every result is a speaking... <br> <span class="font-light">Let's hear
-            some</span></h2>
-    <swiper-container effect="cards" grab-cursor="true"
-        class="mySwiper max-w-[60%] flex items-center justify-center border p-5">
-        @for (testimonial of testimonials; track $index) {
-            <swiper-slide>
-                <blockquote class="testimonial-text">{{ testimonial.text }}</blockquote>
-                <cite>
-                    <span>~</span>
-                    <span class="testator">{{testimonial.citer}}</span>
-                </cite>
-            </swiper-slide>
-        }
-    </swiper-container>
+<div class="h-8 bg-white py-1">
+    <p class="open-say-hi-container text-center" (click)="toggleComponentView($event)">say hi</p>
 </div>
 
-<section class="bg-white flex items-start justify-between pl-[5%] pt-14 max-h-[60svh] h-full">
-    <article class="w-1/3">
-        <p class="text-xl mb-4">Want to know the cost of working with me?</p>
-        <a href="/calculator"
-            class="block w-fit px-5 py-[10px] bg-black text-white border border-black rounded-full">Yes, I'd love that
-            💪🏽</a>
-    </article>
-    <div class="h-full w-2/3 pt-[5svh] overflow-hidden calculator-image">
-        <img src="calculator.jpeg" class="w-full h-full object-cover border rounded-tl-[120px]"
-            alt="image of a screenshot of the calculator page">
-    </div>
-</section>
-
-<my-footer />
+<contact-me 
+    [view]="sayHiComponentViewClass()"
+    (viewChange)="handleViewChange($event)" />

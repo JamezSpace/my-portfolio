@@ -4,7 +4,7 @@ section[aria-label*='tagline'] {
     background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.3)), url(/metallic-bg.jpg);
     background: -moz-linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.3)), url(/metallic-bg.jpg);
     background: -webkit-linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.3)), url(/metallic-bg.jpg);
-    background-size: cover ;
+    background-size: cover;
     /* background-size: 120%; -- for laptop screen -- */
     background-position: center center;
     background-repeat: no-repeat;
@@ -46,22 +46,15 @@ section[aria-label="Heros Section"] h1 span {
     @apply non-tablet-screen:text-5xl;
 }
 
-[aria-label*="work outcome"] article:first-of-type {
-    margin-left: 10%;
-}
-
-[aria-label*="work outcome"] article:last-of-type {
-    margin-right: 10%;
-}
-
 #outcome article {
+    @apply text-3xl;
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 2.5rem;
 
     h2.number {
-        font-size: 1em;
+        font-size: calc(1em / 0.7);
         /* color: #9b9b9a; */
         /* -webkit-text-stroke: 1px #000; */
         color: var(--purple-secondary);
@@ -69,7 +62,8 @@ section[aria-label="Heros Section"] h1 span {
     }
 
     p {
-        font-size: calc(1em / 1.618);
+        text-align: center;
+        font-size: calc(1em / (1.618));
         font-weight: 300;
     }
 }
@@ -114,9 +108,10 @@ section[aria-label="Heros Section"] h1 span {
 
 
     li {
+        @apply text-3xl;
+
         -webkit-text-stroke: 1px #000;
         color: transparent;
-        font-size: 1.75rem;
         letter-spacing: -0.75px;
     }
 }
@@ -135,4 +130,34 @@ section[aria-label="Heros Section"] h1 span {
 
 .calculator-image:hover img {
     object-position: left 100%;
+}
+
+/* RESPONSIVENESS */
+@media screen and (max-width: 520px) {
+
+    [aria-label*="work outcome"] :where(article:first-of-type, article:last-of-type) {
+        margin-inline: 0;
+    }
+
+}
+
+@media screen and (max-width: 680px) {
+    [aria-label*="calculator"] {
+        flex-direction: column;
+
+        & > article {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .calculator-image {
+            width: 100%;
+        }
+
+        .calculator-image img {
+            border-radius: 0;
+        }
+    }
 }

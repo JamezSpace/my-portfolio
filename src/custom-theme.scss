@@ -19,6 +19,13 @@ html {
             typography: Roboto,
             density: 0,
         ));
+
+    // form field
+    @include mat.form-field-overrides((
+            container-vertical-padding: 5px,
+            container-height: 35px,
+            outlined-container-shape: 10px
+        ));
 }
 
 .mat-mdc-notch-piece.mdc-notched-outline__notch {

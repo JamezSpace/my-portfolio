@@ -27,14 +27,13 @@ module.exports = {
                 max: '679px',
                 min: '520px'
             },
-            // 'phone-large-screen': {
-            //     min: '',
-            //     max: ''
-            // },
-            // 'phone-small-screen': {
-            //     min: '',
-            //     max: ''
-            // }
+            'phone-large-screen': {
+                min: '375px',
+                max: '520px'
+            },
+            'phone-small-screen': {
+                max: '375px'
+            }
         }
     },
   },

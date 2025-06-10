@@ -73,3 +73,16 @@ ul.my-flex li:hover {
         width: 30px;
     }
 }
+
+/* RESPONSIVENESS */
+@media screen and (max-width: 620px) {
+    ul.my-flex li {
+        margin-inline: 20px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    ul.my-flex li {
+        margin-inline: 8px;
+    }
+}
