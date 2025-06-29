@@ -78,9 +78,9 @@
     <h2 class="text-center text-3xl font-bold mb-5">Every result is a speaking... <br> <span class="font-light">Let's hear
             some</span></h2>
     <swiper-container effect="cards" grab-cursor="true"
-        class="mySwiper max-w-[80%] non-tablet-screen:max-w-[90%] flex items-center justify-center border p-5">
+        class="mySwiper max-w-[80%] non-tablet-screen:max-w-[90%] flex items-center justify-center py-5 px-3">
         @for (testimonial of testimonials; track $index) {
-            <swiper-slide>
+            <swiper-slide class="card">
                 <blockquote class="testimonial-text">{{ testimonial.text }}</blockquote>
                 <cite>
                     <span>~</span>
@@ -91,7 +91,7 @@
     </swiper-container>
 </div>
 
-<section class="bg-white flex items-start justify-between pl-[5%] pt-14 max-h-[60svh] overflow-hidden h-full" aria-label="container showing a preview of a calculator made for prospective clients interested in knowing the cost of working with me">
+<section class="flex items-start justify-between pl-[5%] pt-14 max-h-[60svh] overflow-hidden h-full" aria-label="container showing a preview of a calculator made for prospective clients interested in knowing the cost of working with me">
     <article class="w-1/3">
         <p class="text-xl mb-4">Want to know the cost of working with me?</p>
         <a href="/calculator"
@@ -104,7 +104,7 @@
     </div>
 </section>
 
-<div class="bg-white py-5 marquee-container" aria-label="my unique value propositions (uvp) or better put, why me?">
+<div class="bg-white py-7 marquee-container" aria-label="my unique value propositions (uvp) or better put, why me?">
     <ul class="flex font-medium marquee-content-container">
         <li>Highly performant web solutions</li>
         <li>Design intuition</li>
@@ -119,8 +119,8 @@
     </ul>
 </div>
 
-<div class="h-8 bg-white py-1">
-    <p class="open-say-hi-container text-center" (click)="toggleComponentView($event)">say hi</p>
+<div class="min-h-10 bg-white py-8">
+    <p class="open-say-hi-container text-center" (click)="toggleComponentView($event)">say hi!</p>
 </div>
 
 <contact-me 

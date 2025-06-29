@@ -7,7 +7,8 @@
 :root {
     --black: #141219;
     --black-secondary: #0f0e19;
-    --purple: #8a78cb;
+    --purple: hsl(253, 44%, 63%);
+    --purple-breakdown: 253, 44%, 60% ;
     --purple-secondary: #c3b6da;
     --blue: #3450b3;
 }
@@ -59,4 +60,12 @@ ul {
     position: absolute;
     inset: 0;
     background: none !important;
+}
+
+.card {
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: hsla(var(--purple-breakdown), 0.75);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
 }

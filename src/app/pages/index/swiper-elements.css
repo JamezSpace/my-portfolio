@@ -7,8 +7,6 @@
 swiper-slide {
     width: 50px;
     border-radius: 1.25rem;
-    background-color: red;
-    border: 5px solid var(--main-color);
     padding: 15px;
     position: relative;
     font-size: 1.2rem;
@@ -36,4 +34,9 @@ swiper-slide {
     & .testator {
         margin-left: 8px;
     }
+}
+
+swiper-slide:not(.swiper-slide-active) {
+    -webkit-filter: blur(5px) saturate(1);
+    filter: blur(5px) saturate(1);
 }
